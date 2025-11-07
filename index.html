@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <title>Asia Connect Travel</title>
+    <link rel="stylesheet" href="./style.css">
+
+  </head>
+    
+  <body>
+  <header class="site-header">
+  <div class="container header-inner">
+    <h1 class="brand">Asia Connect Travel</h1>
+    <nav class="nav">
+      <a href="#home">Home</a>
+      <a href="#destinations">Destinations</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main id="home" class="container">
+  <section class="hero">
+    <h2>Customized travel experiences across China, Bangladesh, and South Korea</h2>
+    <p>Explore curated cultural tours, culinary experiences, and eco-tour options — all designed with SaaS tools.</p>
+    <div class="hero-actions">
+      <button id="show-all">Show All</button>
+      <button id="show-notion">Open Notion Prototype</button>
+    </div>
+  </section>
+
+  <section id="filters" class="filters">
+    <label>Filter by country:
+      <select id="country-filter">
+        <option value="all">All</option>
+        <option value="China">China</option>
+        <option value="Bangladesh">Bangladesh</option>
+        <option value="South Korea">South Korea</option>
+      </select>
+    </label>
+    <label>Search:
+      <input id="search" type="search" placeholder="search experiences..."/>
+    </label>
+  </section>
+
+  <section id="destinations" class="grid" aria-live="polite">
+    <!-- Cards are rendered by JS -->
+  </section>
+
+  <!-- Booking Modal -->
+  <div id="modal" class="modal" aria-hidden="true">
+    <div class="modal-panel" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+      <button id="modal-close" class="modal-close" aria-label="Close">&times;</button>
+      <h3 id="modal-title"></h3>
+      <p id="modal-desc"></p>
+
+      <form id="booking-form">
+        <label>Traveler name
+          <input id="traveler-name" required />
+        </label>
+        <label>Number of travelers
+          <input id="traveler-count" type="number" min="1" value="1" required />
+        </label>
+        <label>Per-person price (USD)
+          <input id="price-per-person" type="number" min="0" step="0.01" required />
+        </label>
+
+        <div class="booking-summary">
+          <p>Total: <span id="total-amount">$0.00</span></p>
+          <p>Commission (10%): <span id="commission-amount">$0.00</span></p>
+        </div>
+
+        <button type="submit">Simulate Booking</button>
+      </form>
+
+      <div id="booking-result" class="booking-result" hidden></div>
+    </div>
+  </div>
+
+  <section id="about" class="about">
+    <h3>About this prototype</h3>
+    <p>This demo shows a Notion-based virtual travel design agency concept: destination cards, mock booking flow, and simple filters. Replace images/text with your project content.</p>
+    <p><strong>Notion prototype:</strong> <a id="notion-link" href="#" target="_blank" rel="noopener">Open Notion (placeholder)</a></p>
+  </section>
+
+  <section id="contact" class="team">
+    <h3>Team & Contact</h3>
+    <ul>
+      <li>Taehyun Kim — Product Design</li>
+      <li>Hokyeong Hwang — Content & Research</li>
+      <li>Yeonsu Kim — Frontend</li>
+      <li>Soheu Lee — Presentation & QA</li>
+    </ul>
+    <p>Email: <a href="mailto:example@asia-connect.travel">example@asia-connect.travel</a></p>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <small>&copy; <span id="year"></span> Asia Connect Travel — Notional SaaS demo</small>
+  </div>
+</footer>
+    <script  src="./script.js"></script>
+
+  </body>
+  
+</html>
